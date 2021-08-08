@@ -1,0 +1,51 @@
+
+.enter_asset_det{
+	overflow: hidden !important;
+}
+.create_asset_form{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	margin-top: 9rem;;
+	width: inherit;
+}
+#image_upload, 
+#land,
+#rentals,
+#house,
+#collection_success,
+#general{
+	/*background: red;*/
+	transition: all 1s;
+	width: inherit;
+	position: absolute;
+	padding: 0 5rem
+	/*top: 0rem;*/
+}
+#image_upload.revealed,
+#rentals.revealed,
+#house.revealed,
+#general.revealed,
+#collection_success.revealed,
+#land.revealed{
+	margin-left: 0rem !important;
+}
+#image_upload.move_right,
+#rentals.move_right,
+#house.move_right,
+#general.move_right,
+#collection_success.move_right,
+#land.move_right{
+	margin-left: 500rem !important;
+}
+#image_upload.move_left,
+#rentals.move_left,
+#house.move_left,
+#general.move_left,
+#collection_success.move_left,
+#land.move_left{
+	margin-left: -500rem !important;
+}

@@ -1,0 +1,302 @@
+.custom_color{
+	color: #fff !important;
+	background: linear-gradient(#0cd950, #09eb39) !important;
+}
+.head{
+	overflow: hidden;
+	border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+}
+.intro{
+	padding: 0;
+	margin: 0;
+	height: 50vh;
+	width: inherit;
+	background-image: url("../images/1c.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.introc{
+	padding: 0;
+	margin: 0;
+	height: 50vh;
+	width: inherit;
+	background-image: url("../images/1b.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+.intros{
+	padding: 0;
+	margin: 0;
+	height: 50vh;
+	width: inherit;
+	background-image: url("../images/1a.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+}
+.contact{
+	padding: 1rem;
+	background-color: rgba(0,0,0,.5);
+	margin-left: 2rem;
+	color: #FFF;
+}
+
+.contact_form{
+	display: flex;
+	flex-direction: column;
+
+}
+.contact_form form{
+	display: flex;
+	flex-direction: column;
+
+}
+.contact_form form input[type='text']{
+	padding: .5rem;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	margin-top: .5rem;
+	outline: none;
+}
+
+.contact_form form textarea{
+	padding: .5rem;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	margin-top: .5rem;
+	outline: none;
+}
+.contact_form form input[type='submit']{
+	padding: .5rem;
+	background: #F0F;
+	color: #fff;
+	border: none;
+	outline: none;
+	margin-top: .5rem;
+}
+.contact_info{
+	height: 30rem;
+	background: linear-gradient(#0cd950, #09eb39);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+}
+
+.contact_info h1,
+.contact_info h3,
+.contact_info p{
+	color: #fff;
+}
+.
+.intros h1,
+.intros p,
+.introc h1,
+.introc p{
+	color: #FFF;
+}
+.intro .serach_form{
+	z-index: 1;
+	background: #FFF;
+	padding: .5rem;
+}
+.intro .serach_form h1{
+	font-size: 20px;
+	color: #707070;
+
+}
+.intro .serach_form form{
+	padding: .5rem;
+	display: flex;
+	/*flex-direction: column;*/
+
+}
+.intro .serach_form form label{
+	display: flex;
+	flex-direction: column;
+}
+.intro .serach_form form select{
+	padding: .5rem;
+	width: 10rem;
+	border: none;
+	border-bottom: 1px solid #707070;
+	outline: none;
+	margin-right: .5rem;
+	color: #707070;
+}
+.intro .serach_form form input{
+	margin-top: 1rem;
+	padding: .5rem;
+	border: none;
+	background: linear-gradient(#0cd950, #09eb39);
+	color: #fff;
+}
+
+.offer{
+	height: auto;
+	padding: .5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/*-------------------------------Signup-----------------*/
+.signup .row,
+.signup .row .col-lg-6,
+.signup .row .col-sm-6{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.signup_info{
+	padding: 8rem;
+	background: linear-gradient(to right, #0cd950, #09eb39);
+	color: #FFF;
+	margin: 0;
+	min-height: 20rem;
+	border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+}
+.signup{
+	padding: 10rem 3rem 3rem 3rem;
+	background: url('../images/3.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 80vh;
+}
+.signup_form{
+	background: rgba(0,0,0,.5);
+	padding: 2rem;
+	color: #FFF;
+	border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.signup .row form{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+.signup .row form .row{
+	display: flex;
+	justify-content: center;
+}
+.signup .row form .row input[type="text"],
+.signup .row form .row input[type="email"],
+.signup .row form .row input[type="password"]{
+	outline: none !important;
+	border-radius: 0 !important;
+	border: none;
+	border-bottom: 2px solid #09eb39;
+	min-width: 15rem !important;
+}
+.signup .row form .row input[type="date"],
+.signup .row form .row select{
+	outline: none !important;
+	border-radius: 0 !important;
+	border: none;
+	border-bottom: 2px solid #09eb39;
+	min-width: 15rem;
+
+}
+.signup .row form input[type="submit"],
+.signup .row form input[type="reset"]{
+	border-radius: 0;
+	min-width: 15rem;
+	border: none;
+}
+
+.policy{
+	background: rgba(0,0,0,.5);
+	padding: 2rem;
+	color: #FFF;
+	border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;
+}
+.
+.form-check label{
+	color: #FFF;
+}
+.signup_form form.login{
+	display: flex;
+	justify-content: center;
+}
+.signup_form form.login input[type="text"],
+.signup_form form.login input[type="email"],
+.signup_form form.login input[type="password"]{
+	outline: none !important;
+	border-radius: 0 !important;
+	border: none;
+	border-bottom: 2px solid #09eb39;
+	min-width: 15rem !important;
+}
+.signup_form form.login input[type="date"],
+.signup_form form.login select{
+	outline: none !important;
+	border-radius: 0 !important;
+	border: none;
+	border-bottom: 2px solid #09eb39;
+	min-width: 20rem;
+
+}
+.signup_form form.login input[type="submit"],
+.signup_form form.login input[type="reset"]{
+	border-radius: 0;
+	min-width: 20rem;
+	border: none;
+}
+
+.login_info{
+
+	padding: 8rem;
+	background: linear-gradient(to right, #0cd950, #09eb39);
+	color: #FFF;
+	margin: 0;
+	min-height: 20rem;
+	/*border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;*/
+	/*border-radius: 100% 49% 50% 52% / 86% 58% 80% 54%;*/
+	border-radius: 100% 31% 50% 52% / 86% 73% 55% 54%;
+	/*border-radius: 85% 40% 50% 52% / 57% 82% 35% 60%;*/
+}
+.just{
+	background: linear-gradient(to right, #FFFFFF, #09eb39);
+
+}
+.just .row{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.property_img{
+	overflow: hidden;
+	min-height: 30rem;
+}
+.
+.property_img img{
+	height: inherit;
+	/*transform: scale(0.5);*/
+}
+.property_int{
+	/*border-radius: 85% 40% 50% 52% / 57% 82% 35% 60%;*/
+	overflow: hidden;
+	min-height: 30rem;
+	padding: 1rem;
+}

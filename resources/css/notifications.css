@@ -1,0 +1,298 @@
+.iconic_links.disabled, .account_setup_access.disabled{
+	display: none;
+}
+
+.notification_messages{
+	position: fixed;
+	top: 5rem;
+	right: 5rem;
+	z-index: 0;
+	/*background: #f00;*/
+	/*transition: all 2s ease;*/
+	background: transparent;
+	padding: .5rem 2rem .5rem .8rem;
+	border-radius: .5rem;
+	cursor: pointer;
+	width: 25rem;
+	color: #fff;
+	visibility: hidden;
+
+}
+.msg_good{
+	background: linear-gradient(to right,  #3fb65f, #09eb39);
+	box-shadow: 5px 5px 10px #09eb39;
+}
+.msg_warn{
+	background: linear-gradient(to right, #ffb62c, #f58157) !important;
+	box-shadow: 5px 5px 10px #f58157;
+}
+.msg_info{
+	background: linear-gradient(to right, #48c5f2, #6692d9) !important;
+	box-shadow: 5px 5px 10px #6692d9;
+}
+.msg_failed{
+	background: linear-gradient(to right, #fb5285, #ff3527) !important;
+	box-shadow: 5px 5px 10px #ff3527;
+}
+.notification_messages.message_show{
+	z-index: 10000;
+	padding: .5rem 2rem .5rem .8rem;
+	animation-name: move_horizontal_left;
+	animation-duration: .5s;
+	animation-iteration-count: 1;
+	visibility: visible !important;
+}
+.notification_messages i{
+	position: absolute;
+	top: .8rem;
+	right: .5rem;
+}
+.notification_messages.disabled{
+	/*transition: all 2s ease;*/
+	/*background: linear-gradient(to right,  #3fb65f, #09eb39);*/
+	/*box-shadow: 5px 5px 10px #09eb39;*/
+
+	position: fixed;
+	top: 5rem;
+	right: -50rem;
+	z-index: 9000;
+	padding: .5rem 2rem .5rem .8rem;
+	border-radius: .5rem;
+	cursor: pointer;
+	width: 25rem;
+	color: #fff;
+	visibility: visible;
+
+
+	animation-name: move_horizontal_right;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+.login_out_info.disabled{
+	/*position: absolute;
+	height: 0vh;
+	width: 0;
+	z-index: 0;
+	margin: 0 auto;
+	overflow: hidden;*/
+	position: absolute;
+	bottom: 100%;
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 10000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: all .5s ease;
+}
+.login_out_info{
+	position: absolute;
+	bottom: 0%;
+	height: 100vh;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 10000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: all .5s ease;
+}
+.login_out_info .buttons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 8rem;
+	width: inherit;
+}
+.login_out_info .buttons button{
+	border: none;
+	outline: none;
+	padding: 1rem;
+	width: 6rem;
+	margin: .5rem;
+	color: #fff;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+.login_out_info .buttons button:first-child {
+	border-radius: 65% 35% 69% 31% / 82% 60% 40% 18%;
+	background: lime;
+	/*border-radius: 100% 31% 50% 52% / 86% 73% 55% 54%;*/
+}
+.login_out_info .buttons button:first-child:hover{
+	background: green;
+	border-radius: 50% 50% 51% 49% / 51% 49% 51% 49% /*50% 50% 26% 74% / 55% 82% 18% 45%*/;
+}
+.login_out_info .buttons button:last-child {
+	border-radius: 31% 69% 26% 74% / 55% 82% 18% 45%  ;
+	background: #f00;
+	/*border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;*/
+}
+.login_out_info .buttons button:last-child:hover{
+	background: orange;
+	border-radius: 50% 50% 51% 49% / 51% 49% 51% 49% /*50% 50% 26% 74% / 55% 82% 18% 45%*/;
+}
+
+.login_out_info .timer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: #fff;
+}
+.login_out_info .timer span.text{
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: lighter;
+}
+.login_out_info .timer span.in{
+	font-weight: bold;
+	font-size: 30px;
+}
+.login_out_info .timer span.countdown{
+	font-weight: bold;
+	font-size: 40px;
+}
+.lock_automatic.disabled{
+	position: absolute;
+	bottom: 100%;
+	height: 100vh;
+	width: 100%;
+	background: url('../images/default/background/system_lock.png'),rgba(0, 0, 0, 0.7);
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-blend-mode: multiply;
+	z-index: 10000;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: all .5s ease;
+}
+.lock_automatic{
+	position: absolute;
+	bottom: 0;
+	height: 100vh;
+	width: 100%;
+	background: url('../images/default/background/system_lock.png'),rgba(0, 0, 0, 0.7);
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	background-blend-mode: multiply;
+	z-index: 10000;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	transition: all .5s ease;
+}
+.lock_automatic .logout_user_detail{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.lock_automatic .logout_user_detail .buttons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*height: 8rem;*/
+	width: inherit;
+}
+.lock_automatic .logout_user_detail .buttons button{
+	border: none;
+	outline: none;
+	padding: 1rem;
+	width: 6rem;
+	margin: .2rem .5rem;
+	color: #fff;
+	cursor: pointer;
+	transition: all .5s ease;
+}
+.lock_automatic .logout_user_detail .buttons button:first-child {
+	border-radius: 65% 35% 69% 31% / 82% 60% 40% 18%;
+	background: lime;
+	/*border-radius: 100% 31% 50% 52% / 86% 73% 55% 54%;*/
+}
+.lock_automatic .logout_user_detail .buttons button:first-child:hover{
+	background: green;
+	border-radius: 50% 50% 51% 49% / 51% 49% 51% 49% /*50% 50% 26% 74% / 55% 82% 18% 45%*/;
+}
+.lock_automatic .logout_user_detail .buttons button:last-child {
+	border-radius: 31% 69% 26% 74% / 55% 82% 18% 45%  ;
+	background: #f00;
+	/*border-radius: 34% 64% 77% 26% / 73% 54% 45% 19%;*/
+}
+.lock_automatic .logout_user_detail .buttons button:last-child:hover{
+	background: orange;
+	border-radius: 50% 50% 51% 49% / 51% 49% 51% 49% /*50% 50% 26% 74% / 55% 82% 18% 45%*/;
+}
+.lock_automatic .logout_user_detail .user_image{
+	height: 8rem;
+	width: 8rem;
+	overflow: hidden;
+	border-radius: 67% 33% 30% 70% / 51% 46% 54% 49%;
+	border: .5rem solid #fff;
+	margin-bottom: 2rem;
+	/*padding: 1rem;*/
+	z-index: 1;
+
+	animation-name: trianglic_rounded_conners_infinite_change;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+.lock_automatic .logout_user_detail .user_image img{
+	height: inherit;
+}
+.lock_automatic .logout_user_detail .user_info{
+	z-index: 2;
+	padding: 1.5rem;
+}
+.lock_automatic .logout_user_detail .user_info form{
+	margin-right: -2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.lock_automatic .logout_user_detail .user_info form span{
+	color: #fff;
+	font-size: 20px;
+}
+.lock_automatic .logout_user_detail .user_info form input[type='password']{
+	padding: .5rem 2rem .5rem 2rem;
+	border-top-left-radius: 2rem;
+	border-bottom-left-radius: 2rem;
+	outline: none;
+	border:  1px solid #fff;
+	width: 20rem;
+}
+
+/**
+ * ANIMATION EFFECTS
+ */
+@keyframes trianglic_rounded_conners_infinite_change {
+  0%   {border-radius: 67% 33% 30% 70% / 51% 46% 54% 49%;}
+  25%  {border-radius: 34% 66% 69% 31% / 51% 46% 54% 49% ; }
+  50%  {border-radius: 50% 50% 69% 31% / 51% 46% 54% 49% ;}
+  75%  {border-radius: 33% 67% 35% 65% / 51% 35% 65% 49% ;}
+  100% {border-radius: 67% 33% 30% 70% / 51% 46% 54% 49% ;}
+}
+@keyframes move_horizontal_left {
+  0%   {right: -35rem;}
+  100% {right: 5rem ;}
+}
+@keyframes move_horizontal_right {
+  0%   {right: 5rem;}
+  100% {right: -50rem ;}
+}
