@@ -318,8 +318,12 @@ if ( ! function_exists('save_details')) {
         * STATEMENT THE HELPER 
         * INTANDES TO DO
         */
-		$ci->db->insert($table_name, $data);
-		$id = $ci->db->insert_id();
+		if($ci->db->insert($table_name, $data)){
+			$id = $ci->db->insert_id();
+		}else{
+			$id = $ci->db->error(); 
+		}
+		
 		return $id;
 	}
 }

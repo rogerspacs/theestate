@@ -27,7 +27,7 @@ $(document).ready(function(){
 			});
 	   }
 
-	// --------------------SYSTEM LOAD CHECKS-------------------------
+	// --------------------SYSTEM LOAD CHECKS-------------------------Upload_assetImage
 
 		welcomeMessage()
 		function welcomeMessage(){
@@ -961,8 +961,6 @@ $(document).ready(function(){
 			var transaction_type = $('#asset_transaction_type').val();
 			var asset_lease_duration = $('#asset_lease_duration').val();
 
-			// PRINT FORM VALUES TO THE CONSOLE
-			// console.log(asset_category + ' ' + location + ' ' + price + ' ' + description);
 			if (asset_category == '' || location =='' || price =='' || description == '' || transaction_type == '') {
 				/**
 				 * DELIVER THE MESSAGE PASSED IN AS ARGUMENT
@@ -976,15 +974,6 @@ $(document).ready(function(){
 				 */
 				var asset_det = [];
 				var asset_images = new Object();
-
-				
-				// var general_det = new Object();
-				// general_det["category_id"] = asset_category;
-				// general_det["transaction_type_id"] = transaction_type;
-				// general_det["location"] = location;
-				// general_det["price"] = price;
-				// general_det["description"] = description;
-				// general_det["asset_lease_duration"] = (asset_lease_duration != 'none') ? asset_lease_duration : 'transaction type not lease';
 
 				var general_det = [];
 				
@@ -1020,7 +1009,7 @@ $(document).ready(function(){
 
 	        	switch (asset_category) { 
 					case 'House':
-						deliver_message("house", 'msg_warn');
+						deliver_message("Enter house details now", 'msg_info');
 						/**
 						 *  AFTER SUBMITING THE ASSET CATEGORY AS HOUSE, DISABLE THE CATEGORY
 						 *  SELECTION FIELD THEN MOVE TO THE HOUSE DETAILS 
@@ -1068,7 +1057,6 @@ $(document).ready(function(){
 					            all_house_features = house_features.join("| ");
 
 					            // HOUSE COLLECTED DETAILS
-								// $('#asset_land_size_collected').text(land_size);
 								$('#asset_size_of_land_sitted_on_collected').text(sited_on_land_size);
 								$('#asset_number_of_bedrooms_collected').text(number_of_bed_rooms);
 								$('#asset_number_of_birthrooms_collected').text(number_of_birth_rooms);
@@ -1099,9 +1087,6 @@ $(document).ready(function(){
 						 */
 						$('#image_upload').on('submit', function (event) {
 							event.preventDefault();
-
-							// console.log(selected_images);
-							sessionStorage.setItem('asset_images', selected_images);
 							
 							next('#image_upload', '#collection_success');
 						});
@@ -1123,7 +1108,7 @@ $(document).ready(function(){
 
 						break;
 					case 'Land': 
-						deliver_message("land", 'msg_warn');
+						deliver_message("Enter land details", 'msg_warn');
 
 						/**
 						 *  AFTER SUBMITING THE ASSET CATEGORY AS HOUSE,
@@ -1188,8 +1173,6 @@ $(document).ready(function(){
 								next('#land', '#image_upload');
 							}
 						});
-
-
 						
 						/**
 						 *  SUMIT/UPLOAD THE IMAGES YOU HAVE SELECTED AND
@@ -1197,9 +1180,6 @@ $(document).ready(function(){
 						 */
 						$('#image_upload').on('submit', function (event) {
 							event.preventDefault();
-
-							// console.log(selected_images);
-							sessionStorage.setItem('asset_images', selected_images);
 
 							next('#image_upload', '#collection_success');
 						});
@@ -1222,7 +1202,7 @@ $(document).ready(function(){
 
 						break;
 					case 'Rental': 
-						deliver_message("Rental", 'msg_warn');
+						deliver_message("Emter Rental details", 'msg_warn');
 
 						/**
 						 *  AFTER SUBMITING THE ASSET CATEGORY AS HOUSE,
@@ -1271,7 +1251,6 @@ $(document).ready(function(){
 					            all_rental_features = rental_features.join("| ");
 
 					            // HOUSE COLLECTED DETAILS
-								// $('#asset_land_size_collected').text(land_size);
 								$('#asset_number_of_rooms_collected').text(number_of_rooms);
 								$('#asset_size_of_rooms_collected').text(size_of_rooms);
 								
@@ -1298,9 +1277,6 @@ $(document).ready(function(){
 						 */
 						$('#image_upload').on('submit', function (event) {
 							event.preventDefault();
-
-							sessionStorage.setItem('asset_images', selected_images);
-							// console.log(asset_images);
 							
 							next('#image_upload', '#collection_success');
 						});
@@ -1328,7 +1304,30 @@ $(document).ready(function(){
 			}
 
 
-			// colllect images features
+			/**
+			 * UPLOAD IMAGES AND BRING BACK THE IMAGE NAMES 
+			 * AS THE RESPOSE DATE THEN USE IT TO SET SESSION IMAGE NAME
+			 * */
+			$('#image_upload').on('submit', function (event) {
+				event.preventDefault();
+				$.ajax({
+					url:'http://127.0.0.1/theestate/Asset/Upload_assetImage',
+		            type:"post",
+		            data:new FormData(this), 
+		            contentType:false,
+		            cache:false,
+		            processData:false,
+		            success: function(data){
+						// console.log(data);
+						sessionStorage.setItem('asset_images', data);
+
+		          }
+		       });
+
+			});
+
+
+			// COLLECT IMAGE NAMES
 			var selected_images = [];
 			// DISPLAY IMAGES ON SELECT
 			front_image.onchange = evt => {
@@ -1336,7 +1335,6 @@ $(document).ready(function(){
 			  if (file) {
 			  	// COLLECT ASSET IMAGES
 				selected_images.push(file.name);
-				// asset_images['front_image'] = file.name;
 
 			    front_image_display.src = URL.createObjectURL(file);
 			  }
@@ -1346,7 +1344,6 @@ $(document).ready(function(){
 			  if (file) {
 			  	// COLLECT ASSET IMAGES
 				selected_images.push(file.name);
-				// asset_images['rear_image'] = file.name;
 
 			    rear_image_display.src = URL.createObjectURL(file);
 			  }
@@ -1356,7 +1353,6 @@ $(document).ready(function(){
 			  if (file) {
 			  	// COLLECT ASSET IMAGES
 				selected_images.push(file.name);
-				// asset_images['left_side_image'] = file.name;
 
 			    left_side_image_display.src = URL.createObjectURL(file);
 			  }
@@ -1366,7 +1362,6 @@ $(document).ready(function(){
 			  if (file) {
 			  	// COLLECT ASSET IMAGES
 				selected_images.push(file.name);
-				// asset_images['right_side_image'] = file.name;
 
 			    right_side_image_display.src = URL.createObjectURL(file);
 			  }
@@ -1376,7 +1371,6 @@ $(document).ready(function(){
 			  if (file) {
 			  	// COLLECT ASSET IMAGES
 				selected_images.push(file.name);
-				// asset_images['arial_image'] = file.name;
 
 			    arial_image_display.src = URL.createObjectURL(file);
 			  }
@@ -1386,7 +1380,6 @@ $(document).ready(function(){
 			  if (file) {
 			  	// COLLECT ASSET IMAGES
 				selected_images.push(file.name);
-				asset_images['interior_image'] = file.name;
 
 			    interior_image_display.src = URL.createObjectURL(file);
 			  }
@@ -1400,27 +1393,27 @@ $(document).ready(function(){
 
 			$('.prev').on('click', function(event) {
 				event.preventDefault();
-			 	deliver_message("Info! system check", 'msg_info');
-				elementMotion(preview_from, 'revealed', 'move_right', 'Info! First step complete, your on second step')
-				elementMotion(preview_to, 'move_left', 'revealed', 'Info! First step complete')
+			 	// deliver_message("Info! system check", 'msg_info');
+				elementMotion(preview_from, 'revealed', 'move_right', 'Continue please your on the right track')
+				elementMotion(preview_to, 'move_left', 'revealed', 'Continue please your on the right track')
 			});
 		}
 		function next(from, to) {
-		 	deliver_message("Info! system check", 'msg_info');
-			elementMotion(from, 'revealed', 'move_left', 'Info! First step complete, your on second step')
-			elementMotion(to, 'move_right', 'revealed', 'Info! First step complete')
+		 	// deliver_message("Info! system check", 'msg_info');
+			elementMotion(from, 'revealed', 'move_left', 'Continue please your on the right track')
+			elementMotion(to, 'move_right', 'revealed', 'Continue please your on the right track')
 		}
 		function move_from_image(move_to){
 			
-		 	deliver_message("Info! system check", 'msg_info');
-			elementMotion('#image_upload', 'revealed', 'move_right', 'Info! First step complete, your on second step')
-			elementMotion(move_to, 'move_left', 'revealed', 'Info! First step complete')
+		 	// deliver_message("Info! system check", 'msg_info');
+			elementMotion('#image_upload', 'revealed', 'move_right', 'Continue please your on the right track')
+			elementMotion(move_to, 'move_left', 'revealed', 'Continue please your on the right track')
 
 		}
 		function move_from_general(move_to) {
 
-			elementMotion('#general', 'revealed', 'move_left', 'Info! First step complete, your on second step')
-			elementMotion(move_to, 'move_right', 'revealed', 'Info! First step complete, your on second step')
+			elementMotion('#general', 'revealed', 'move_left', 'Continue please your on the right track')
+			elementMotion(move_to, 'move_right', 'revealed', 'Continue please your on the right track')
 		}
 
 		/**
@@ -1469,7 +1462,7 @@ $(document).ready(function(){
 			/**
 			 * DELIVER THE MESSAGE PASSED IN AS ARGUMENT
 			 */
-		 	deliver_message("Info! Data collection complete", 'msg_good');
+		 	// deliver_message("Info! Data collection complete", 'msg_good');
 
 		 	/**
 		 	 * CLEAR ALL FORM FIELDS
@@ -1519,13 +1512,13 @@ $(document).ready(function(){
 				},
 				success: function(data){
 					console.log(data);
-
+					deliver_message("Added to your asset collection", 'msg_good');
 				}
 			 });
 		}
 
 		/**
-		 * MOVE ALL ASSET COLLECTION SECTIONS BACK TO THE RIGHT END
+		 * MOVE ALL ASSET COLLECTION SECTIONS BACK TO THE RIGHT END 
 		 */
 		function moveAssetsbacktoleft(){
 			/**
@@ -1534,8 +1527,6 @@ $(document).ready(function(){
 			const asset_categories  = ["#house", "#rentals", '#land', '#image_upload', '#collection_success'];
 			var asset_category_counter;
 			for (asset_category_counter = 0; asset_category_counter < asset_categories.length; ++asset_category_counter) {
-			    // do something with `substr[i]`
-			    // console.log(asset_categories[asset_category_counter]);
 				elementMotion(asset_categories[asset_category_counter], 'move_left', 'move_right', 'Data collection completed successfully');
 			}
 		}
@@ -1563,7 +1554,7 @@ $(document).ready(function(){
 				/**
 				 * DELIVER THE MESSAGE PASSED IN AS ARGUMENT
 				 */
-			 	// deliver_message("Info! check failed", 'msg_info');
+			 	// deliver_message("Info! check failed", 'msg_info'); Info! First step complete
 			}
 		}
 
@@ -1572,7 +1563,7 @@ $(document).ready(function(){
 				/**
 					 * DELIVER THE MESSAGE PASSED IN AS ARGUMENT
 					 */
-				 	deliver_message(msg, 'msg_info');
+				 	// deliver_message(msg, 'msg_info');
 			}else{
 			}
 		}

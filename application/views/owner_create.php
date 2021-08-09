@@ -419,13 +419,13 @@
 												    </div>
 													<div class="form-group col-md-6">
 												      	<div class="form-check policy">
-													        <input name="land_features" class="form-check-input" type="checkbox" id="has_gentle_slop" value="has gentle slope">
+													        <input name="land_features" class="form-check-input" type="checkbox" id="has_gentle_slop" value="Has gentle slope">
 													        <label class="form-check-label Clwhite" for="has_gentle_slop">has gentle slope</label>
 												      	</div>
 												    </div>
 													<div class="form-group col-md-6">
 												      	<div class="form-check policy">
-													        <input name="land_features" class="form-check-input" type="checkbox" id="has_water_source" value="has_water source">
+													        <input name="land_features" class="form-check-input" type="checkbox" id="has_water_source" value="Has_water source">
 													        <label class="form-check-label Clwhite" for="has_water_source">Has water source</label>
 												      	</div>
 												    </div>
@@ -461,7 +461,7 @@
 										</div>
 									</form>
 
-									<form id="image_upload" class="move_right">
+									<form id="image_upload" class="move_right" enctype="multipart/form-data">
 										<div class="form-row">
 											<div class="col-md-12">
 												<h4 class="Clwhite">Upload images</h4>
@@ -474,7 +474,7 @@
 													<i class="las la-plus Clgreen"></i>
 													<span>Front Image</span>
 												</label>
-												<input type="file" name="image" id="front_image" class="no_show">
+												<input type="file" name="front_image" id="front_image" class="no_show">
 											</div>
 											<div class="col-sm-6 img_box">
 												<img id="rear_image_display" src="http://127.0.0.1/theestate/resources/images/default/background/img_bg.png" class="img_bg" />
@@ -482,7 +482,7 @@
 													<i class="las la-plus Clgreen"></i>
 													<span>rear Image</span>
 												</label>
-												<input type="file" name="image" id="rear_image" class="no_show">
+												<input type="file" name="rear_image" id="rear_image" class="no_show">
 											</div>
 											<div class="col-sm-6 img_box">
 												<img id="left_side_image_display" src="http://127.0.0.1/theestate/resources/images/default/background/img_bg.png" class="img_bg" />
@@ -490,7 +490,7 @@
 													<i class="las la-plus Clgreen"></i>
 													<span>Left Side Image</span>
 												</label>
-												<input type="file" name="image" id="left_side_image" class="no_show">
+												<input type="file" name="left_side_image" id="left_side_image" class="no_show">
 											</div>
 											<div class="col-sm-6 img_box">
 												<img id="right_side_image_display" src="http://127.0.0.1/theestate/resources/images/default/background/img_bg.png" class="img_bg" />
@@ -498,7 +498,7 @@
 													<i class="las la-plus Clgreen"></i>
 													<span>Right Side Image</span>
 												</label>
-												<input type="file" name="image" id="right_side_image" class="no_show">
+												<input type="file" name="right_side_image" id="right_side_image" class="no_show">
 											</div>
 											<div class="col-sm-6 img_box">
 												<img id="arial_image_display" src="http://127.0.0.1/theestate/resources/images/default/background/img_bg.png" class="img_bg" />
@@ -506,7 +506,7 @@
 													<i class="las la-plus Clgreen"></i>
 													<span>Ariail Image</span>
 												</label>
-												<input type="file" name="image" id="arial_image" class="no_show">
+												<input type="file" name="arial_image" id="arial_image" class="no_show">
 											</div>
 											<div class="col-sm-6 img_box">
 												<img id="interior_image_display" src="http://127.0.0.1/theestate/resources/images/default/background/img_bg.png" class="img_bg" />
@@ -514,7 +514,7 @@
 													<i class="las la-plus Clgreen"></i>
 													<span>Interior Image</span>
 												</label>
-												<input type="file" name="image" id="interior_image" class="no_show">
+												<input type="file" name="interior_image" id="interior_image" class="no_show">
 											</div>
 										</div>
 										<div class="form-row">
