@@ -378,6 +378,187 @@ if(! function_exists('save_user_profile_image')){
         return $result;
     }
 }
+
+/**
+ *  MAKE A DROP DOWN FROM THE TRANSACTIION TYPE
+ */
+if ( ! function_exists('landFeatures')){
+	function landFeatures(){
+
+		/**
+		 * 	VARIABLE TO HOLD THE DROP DOWN
+		 */
+		$output ='';
+
+		/**
+		 * get main CodeIgniter object
+		 */
+       	$ci =& get_instance();
+       
+       /**
+        * load databse library
+        */
+       	$ci->load->database();
+
+       /**
+        * get data from database
+        */
+       	$query = $ci->db->get_where("category_properties_tb",array("category_id"=>1));
+       	// $query = $ci->db->get("transaction_type_tb");
+
+       	if($query->num_rows() > 0){
+           $land_properties = $query->result();
+           $land_property_id ="";
+           	foreach($land_properties as $land_property){
+           		// CHECK IF LAND PROPERTY/FEATURE NAME HAS SPANCE IF IT DOES REPLACE THE SPACE WITH UNDERSCORE(_) AND MAKE IT  THE PROPERTY ID
+           		$land_property_with_space = explode(" ", $land_property->property_name);
+           		if(count($land_property_with_space) > 1){
+           			for ($i=0; $i < count($land_property_with_space); $i++) { 
+           				$land_property_id .= $land_property_with_space[$i];
+           			}
+           			// $land_property_id = $land_property_with_space[0]."_".$land_property_with_space[1];
+           		}else{
+           			$land_property_id = $land_property_with_space[0];
+           		}
+
+           		$output .='<div class="form-group col-md-6">';
+				      	$output .='<div class="form-check policy">';
+					        $output .='<input name="land_features" class="form-check-input" type="checkbox" id="'.$land_property_id.'" value="'.$land_property->property_id.'">';
+					        $output .='<label class="form-check-label Clwhite" for="'.$land_property_id.'">'.$land_property->property_name.'</label>';
+				      	$output .='</div>';
+				    $output .='</div>';
+			}
+
+			/**
+			 * 	RETURN THE OPTIONS FOR THE VIEWS TO US
+			 */
+           	return $output;
+       	}else{
+			$output .= 'Nothing found';
+
+           return $output;
+       	}
+	}
+
+}
+if ( ! function_exists('houseFeatures')){
+	function houseFeatures(){
+
+		/**
+		 * 	VARIABLE TO HOLD THE DROP DOWN
+		 */
+		$output ='';
+
+		/**
+		 * get main CodeIgniter object
+		 */
+       	$ci =& get_instance();
+       
+       /**
+        * load databse library
+        */
+       	$ci->load->database();
+
+       /**
+        * get data from database
+        */
+       	$query = $ci->db->get_where("category_properties_tb",array("category_id"=>2));
+       	// $query = $ci->db->get("transaction_type_tb");
+
+       	if($query->num_rows() > 0){
+           $house_properties = $query->result();
+           $house_property_id ="";
+           	foreach($house_properties as $house_property){
+           		// CHECK IF house PROPERTY/FEATURE NAME HAS SPANCE IF IT DOES REPLACE THE SPACE WITH UNDERSCORE(_) AND MAKE IT  THE PROPERTY ID
+           		$house_property_with_space = explode(" ", $house_property->property_name);
+           		if(count($house_property_with_space) > 1){
+           			for ($i=0; $i < count($house_property_with_space); $i++) { 
+           				$house_property_id .= $house_property_with_space[$i];
+           			}
+           			// $house_property_id = $house_property_with_space[0]."_".$house_property_with_space[1];
+           		}else{
+           			$house_property_id = $house_property_with_space[0];
+           		}
+
+           		$output .='<div class="form-group col-md-6">';
+				      	$output .='<div class="form-check policy">';
+					        $output .='<input name="house_features" class="form-check-input" type="checkbox" id="'.$house_property_id.'" value="'.$house_property->property_id.'">';
+					        $output .='<label class="form-check-label Clwhite" for="'.$house_property_id.'">'.$house_property->property_name.'</label>';
+				      	$output .='</div>';
+				    $output .='</div>';
+			}
+
+			/**
+			 * 	RETURN THE OPTIONS FOR THE VIEWS TO US
+			 */
+           	return $output;
+       	}else{
+			$output .= 'Nothing found';
+
+           return $output;
+       	}
+	}
+
+}
+if ( ! function_exists('rentalFeatures')){
+	function rentalFeatures(){
+
+		/**
+		 * 	VARIABLE TO HOLD THE DROP DOWN
+		 */
+		$output ='';
+
+		/**
+		 * get main CodeIgniter object
+		 */
+       	$ci =& get_instance();
+       
+       /**
+        * load databse library
+        */
+       	$ci->load->database();
+
+       /**
+        * get data from database
+        */
+       	$query = $ci->db->get_where("category_properties_tb",array("category_id"=>3));
+       	// $query = $ci->db->get("transaction_type_tb");
+
+       	if($query->num_rows() > 0){
+           $rental_properties = $query->result();
+           $rental_property_id ="";
+           	foreach($rental_properties as $rental_property){
+           		// CHECK IF rental PROPERTY/FEATURE NAME HAS SPANCE IF IT DOES REPLACE THE SPACE WITH UNDERSCORE(_) AND MAKE IT  THE PROPERTY ID
+           		$rental_property_with_space = explode(" ", $rental_property->property_name);
+           		if(count($rental_property_with_space) > 1){
+           			for ($i=0; $i < count($rental_property_with_space); $i++) { 
+           				$rental_property_id .= $rental_property_with_space[$i];
+           			}
+           		}else{
+           			$rental_property_id = $rental_property_with_space[0];
+           		}
+
+           		$output .='<div class="form-group col-md-6">';
+				      	$output .='<div class="form-check policy">';
+					        $output .='<input name="rental_features" class="form-check-input" type="checkbox" id="'.$rental_property_id.'" value="'.$rental_property->property_id.'">';
+					        $output .='<label class="form-check-label Clwhite" for="'.$rental_property_id.'">'.$rental_property->property_name.'</label>';
+				      	$output .='</div>';
+				    $output .='</div>';
+			}
+
+			/**
+			 * 	RETURN THE OPTIONS FOR THE VIEWS TO US
+			 */
+           	return $output;
+       	}else{
+			$output .= 'Nothing found';
+
+           return $output;
+       	}
+	}
+
+}
+
 // $this->db->query("select user_tb.user_id,user_tb.fname,user_tb.lname,user_tb.email,user_tb.telephone,user_tb.dob,gender_tb.gender_name,country_tb.country_name,account_type_tb.account_name
 //                from user_tb
 //                JOIN `gender_tb` ON `gender_tb`.`gender_id` = `user_tb`.`gender_id`
