@@ -7,6 +7,7 @@
   --white: #ffffff;
   --ored: #fd4251;
   --dalB: #707070;
+  --gray: #005662;
 }
 .Clwhite{
 	color: var(--white) !important;
@@ -22,6 +23,9 @@
 }
 .Clblue{
 	color: var(--blue) !important;
+}
+.Clgray{
+	color: var(--gray) !important;
 }
 .bg1{
 	background: linear-gradient(to right,  #3fb65f, #76ff03) !important;/* #09eb39*/
@@ -616,15 +620,16 @@ label.add_image i{
 	margin: 0 auto;
 }
 .listings{
-	background: url('../images/2.jpg') !important;
+	/*background: url('../images/2.jpg') !important;
 	background-position: center !important;
 	background-attachment: fixed !important;
 	background-size: cover !important;
 	background-origin: content-box !important;
-	background-repeat: no-repeat !important;
+	background-repeat: no-repeat !important;*/
 	margin-top: 4rem;
 	position: relative;
-	width: inherit;
+	/*width: inherit;*/
+	width: 100%;
 	background: var(--white);
 	min-height: 95vh;
 }
