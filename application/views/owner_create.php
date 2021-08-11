@@ -352,7 +352,15 @@
 											<div class="col-md-12">
 												<h5 class="Clwhite">Other features</h5>
 											    <div class="row">
-													<div class="form-group col-md-6">
+											    	<?php  
+					                                    /**
+					                                     *  DISPLAY THE LAND FEATURES
+					                                     */
+					                                    $rentalFeatures = rentalFeatures();
+					                                    echo $rentalFeatures;
+
+					                                    ?>
+													<!---- div class="form-group col-md-6">
 												      	<div class="form-check policy">
 													        <input name="rental_features" class="form-check-input" type="checkbox" id="indoor_toilet" value="Indoor toilet">
 													        <label class="form-check-label Clwhite" for="indoor_toilet">Indoor toilet</label>
@@ -369,7 +377,7 @@
 													        <input name="rental_features" class="form-check-input" type="checkbox" id="rooms_with_ceiling" value="Rooms with ceiling">
 													        <label class="form-check-label Clwhite" for="rooms_with_ceiling">Rooms with ceiling</label>
 												      	</div>
-												    </div>
+												    </div> -->
 												</div>
 											</div>
 										</div>
@@ -405,7 +413,15 @@
 											<div class="col-md-12">
 												<h5 class="Clwhite">Other features</h5>
 											    <div class="form-row">
-													<div class="form-group col-md-6">
+					                                    <?php  
+					                                    /**
+					                                     *  DISPLAY THE LAND FEATURES
+					                                     */
+					                                    $landFeatures = landFeatures();
+					                                    echo $landFeatures;
+
+					                                    ?>
+													<!-- <div class="form-group col-md-6">
 												      	<div class="form-check policy">
 													        <input name="land_features" class="form-check-input" type="checkbox" id="has_land_title" value="Has land title">
 													        <label class="form-check-label Clwhite" for="has_land_title">has land title</label>
@@ -440,7 +456,7 @@
 													        <input name="land_features" class="form-check-input" type="checkbox" id="quiet_neighborhood" value="Quiet neighborhood">
 													        <label class="form-check-label Clwhite" for="quiet_neighborhood">Quiet neighborhood</label>
 												      	</div>
-												    </div>
+												    </div> -->
 												</div>
 											</div>
 										</div>

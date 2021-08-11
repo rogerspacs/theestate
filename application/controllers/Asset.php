@@ -159,31 +159,39 @@ class Asset extends CI_Controller
         // TURN ASSET FEATURES INTO ARRAY OF ASSET FEATURES
         $asset_features_arr = explode('| ', $asset_features);
 
-        // GET CATEGORY PROPERTIES
-        $category_properties = get_details('category_properties_tb');
-        $category_property_names = '';
-        foreach ($category_properties as $category_property) {
-            $category_property_names .= $category_property->property_name. '|';
+        // // GET CATEGORY PROPERTIES
+        // $category_properties = get_details('category_properties_tb');
+        // $category_property_names = '';
+        // foreach ($category_properties as $category_property) {
+        //     $category_property_names .= $category_property->property_name. '|';
+        // }
+        // $category_property_names_arr = explode('|', $category_property_names);
+
+        // foreach ($asset_features_arr as $asset_feature) {
+        //     if(in_array($asset_feature, $category_property_names_arr)){
+
+        //         // GET FEATURRE ID
+        //         $feature = check_field_exists('category_properties_tb', 'property_name', $asset_feature);
+        //         $property_id = (int)$feature[0]->property_id;
+        //         $asset_feature_data = array(
+        //             'property_id'            => $property_id,
+        //             'asset_id'               => $asset_id
+        //         );
+
+        //         $lastinserted_id = save_details('asset_features_tb', $asset_feature_data);
+
+        //     }
+        // }
+        foreach($asset_features_arr as $asset_feature){
+            $asset_feature_data = array(
+                'property_id'            => (int)$asset_feature,
+                'asset_id'               => $asset_id
+            );
+
         }
-        $category_property_names_arr = explode('|', $category_property_names);
+            // $lastinserted_id = save_details('asset_features_tb', $asset_feature_data);
 
-        foreach ($asset_features_arr as $asset_feature) {
-            if(in_array($asset_feature, $category_property_names_arr)){
-
-                // GET FEATURRE ID
-                $feature = check_field_exists('category_properties_tb', 'property_name', $asset_feature);
-                $property_id = (int)$feature[0]->property_id;
-                $asset_feature_data = array(
-                    'property_id'            => $property_id,
-                    'asset_id'               => $asset_id
-                );
-
-                // $lastinserted_id = save_details('asset_features_tb', $asset_feature_data);
-
-            }
-        }
-
-        return $lastinserted_id;
+        return $asset_features_arr;
     }
 
     public function save_selected_images($selected_images, $asset_id)
